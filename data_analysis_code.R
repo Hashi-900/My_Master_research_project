@@ -4,6 +4,13 @@ library(readxl)
 
 tidy_df <- read_xlsx('thesis_data.xlsx')
 
+fdi_df <- read_csv('fdi_flow_sub-sahara.csv')
+
+str(fdi_df)
+
+fdi_df %>% 
+  view()
+
 str(tidy_df)
 
 average_tidy <- tidy_df %>%
@@ -31,3 +38,12 @@ full_tidy_data <- tidy_df %>%
 
 
 summary(lm(indust_diff ~ oda_diff + fdi_diff + access_to_electricty, data = full_tidy_data))
+
+
+
+
+fdi_tidy <- fdi_df %>%
+  filter(YEAR!= 'ECONOMY') %>% 
+  pivot_longer(!YEAR, names_to = 'year', values_to = 'fdi')
+
+fdi_tidy
