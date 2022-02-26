@@ -46,4 +46,14 @@ fdi_tidy <- fdi_df %>%
   filter(YEAR!= 'ECONOMY') %>% 
   pivot_longer(!YEAR, names_to = 'year', values_to = 'fdi')
 
-fdi_tidy
+fdi_df
+
+
+#### we need to modify variables selection and methodology.
+
+# so we have to come up new methodology that captures the variation of modeled variables more.
+
+# this need an extensive review of past literature and concluded results.
+
+
+
